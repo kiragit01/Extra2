@@ -12,14 +12,13 @@ namespace Extra2
         public ShiftArray(int[] arr) 
         { 
             int n = arr.Length - 1;
-            f1 = arr[n];
             for (int i = n; i >= 0; i--)
             {
-                if(i == 0) arr[n] = arr[i];
                 f1 = f2;
                 f2 = arr[i];
                 arr[i] = f1;
             }
+            arr[n] = arr[0];
         }
     }
 }
